@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genius Games — game development studio</title>
+<meta name="description" content="Game development studio: web games, multiplayer, visual novels.">
+<script>(function(){try{var th=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.documentElement.dataset.theme=th}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<header class="top"><div class="wrap"><nav>
+ <a class="logo" href="#top"><i></i>Genius Games</a>
+ <ul id="menu">
+  <li><a href="#about" data-i18n="nav.about"></a></li>
+  <li><a href="#process" data-i18n="nav.process"></a></li>
+  <li><a href="#projects" data-i18n="nav.projects"></a></li>
+  <li><a href="#gallery" data-i18n="nav.gallery"></a></li>
+  <li><a href="#contact" data-i18n="nav.contact"></a></li>
+ </ul>
+ <div class="tools">
+  <div class="langsw" role="group" data-i18n-aria="aria.lang"><button data-l="en">EN</button><button data-l="ru">RU</button></div>
+  <button class="icon" id="theme" data-i18n-aria="aria.theme">◐</button>
+  <a class="btn sm" href="#contact" data-i18n="nav.consult"></a>
+  <button class="icon burger" id="burger" data-i18n-aria="aria.menu" aria-expanded="false">☰</button>
+ </div>
+</nav></div></header>
+
+<main id="top">
+<section class="hero" id="hero">
+ <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+ <div class="hero-in">
+  <h1 data-i18n="hero.title"></h1>
+  <p data-i18n="hero.text"></p>
+  <div class="row"><a class="btn" href="#contact" data-i18n="hero.cta1"></a><a class="btn ghost-l" href="#projects" data-i18n="hero.cta2"></a></div>
+ </div>
+ <div class="stack" id="heroStack" aria-hidden="true"></div>
+</section>
+<div class="marquee" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<section id="about"><div class="wrap">
+ <div class="about">
+  <div>
+   <h2 data-i18n="about.title"></h2>
+   <p data-i18n="about.p1"></p>
+   <p data-i18n="about.p2"></p>
+  </div>
+  <div>
+   <h3 data-i18n="about.do"></h3>
+   <div class="skills"><span data-i18n="skill.1"></span><span data-i18n="skill.2"></span><span data-i18n="skill.3"></span><span data-i18n="skill.4"></span><span data-i18n="skill.5"></span><span>JavaScript</span><span>Node.js</span><span>Unity</span></div>
+  </div>
+ </div>
+ <div class="stats">
+  <div class="stat"><b data-count="12">0</b><span data-i18n="stat.1"></span></div>
+  <div class="stat"><b data-count="8">0</b><span data-i18n="stat.2"></span></div>
+  <div class="stat"><b data-count="3">0</b><span data-i18n="stat.3"></span></div>
+  <div class="stat"><b data-count="15">0</b><span data-i18n="stat.4"></span></div>
+ </div>
+</div></section>
+
+<section id="process" class="alt"><div class="wrap">
+ <h2 data-i18n="proc.title"></h2>
+ <ol class="steps">
+  <li><b>1</b><h3 data-i18n="proc.1.t"></h3><p data-i18n="proc.1.p"></p></li>
+  <li><b>2</b><h3 data-i18n="proc.2.t"></h3><p data-i18n="proc.2.p"></p></li>
+  <li><b>3</b><h3 data-i18n="proc.3.t"></h3><p data-i18n="proc.3.p"></p></li>
+  <li><b>4</b><h3 data-i18n="proc.4.t"></h3><p data-i18n="proc.4.p"></p></li>
+ </ol>
+</div></section>
+
+<section id="projects"><div class="wrap">
+ <h2 data-i18n="proj.title"></h2>
+ <div class="bar">
+  <div class="filters" id="filters" role="group" data-i18n-aria="aria.filter"></div>
+  <input type="search" id="search" data-i18n-ph="proj.search" data-i18n-aria="aria.search">
+ </div>
+ <div class="grid" id="projectGrid"></div>
+ <p class="empty" id="empty" hidden data-i18n="proj.empty"></p>
+</div></section>
+
+<section id="gallery" class="alt"><div class="wrap">
+ <h2 data-i18n="gal.title"></h2>
+ <div class="gal" id="gal"></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+ <div class="contact">
+  <div>
+   <h2 data-i18n="c.title"></h2>
+   <p data-i18n="c.p1"></p>
+   <p data-i18n="c.p2"></p>
+  </div>
+  <form id="leadForm" novalidate>
+   <label><span data-i18n="c.name"></span><input name="name" required minlength="2" maxlength="60" autocomplete="name" data-i18n-ph="c.name.ph"></label>
+   <label><span data-i18n="c.phone"></span><input name="phone" type="tel" required pattern="[+0-9 ()\-]{9,20}" autocomplete="tel" placeholder="+996 700 123 456"></label>
+   <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+   <button class="btn" type="submit" id="send" data-i18n="c.btn"></button>
+   <div class="msg" id="msg" role="status" aria-live="polite"></div>
+  </form>
+ </div>
+</div></section>
+</main>
+
+<div class="wrap"><footer><span>© 2026 Tulpar Games</span><span>hello@tulpar.games</span></footer></div>
+
+<dialog id="lb">
+ <button class="x" data-i18n-aria="aria.close">✕</button>
+ <button class="nav prev" data-i18n-aria="aria.prev">‹</button>
+ <button class="nav next" data-i18n-aria="aria.next">›</button>
+ <div id="lbBody"></div><p class="cap" id="lbCap"></p>
+</dialog>
+
+<script src="js/i18n.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
