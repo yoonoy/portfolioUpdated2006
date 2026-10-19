@@ -29,8 +29,19 @@ const PROJECTS = [
   }
 ];
 
-const GALLERY = [ // put your files into the img/ folder
-  { src: "1.jpg", alt: { en: "Photo 1", ru: "Фото 1" } },
-  { src: "2.jpg", alt: { en: "Photo 2", ru: "Фото 2" } },
-  { src: "3.jpg", alt: { en: "Photo 3", ru: "Фото 3" } }
+
+const GALLERY = [
+  {
+    src: "img/1.jpg",
+    alt: { en: "Photo 1", ru: "Фото 1" }
+  },
+  {
+    src: "img/2.jpg",
+    alt: { en: "Photo 2", ru: "Фото 2" }
+  },
+  {
+    src: "img/3.jpg",
+    alt: { en: "Photo 3", ru: "Фото 3" }
+  }
 ];
+
